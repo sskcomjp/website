@@ -27,12 +27,10 @@ function initMap() {
     mapTypeId: "hybrid"
   });
   
-  map.addListener(map, 'click', function(e) {
-    var marker = new map.Marker({
-      position: e.latLng,  //イベントの発生した緯度・経度（位置）
-      map: this,  //this は map を意味します
-      animation: map.Animation.DROP
-    });
+  map.addListener('click', function(e){
+  this.setCenter(e.latLng);
+  this.panTo(e.latLng); アニメーションで中心位置を移動
+});
     
   
 }
