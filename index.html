@@ -16,7 +16,7 @@
 <div id="gmap"></div>
  
 <script>
-var markers = null; // マーカーのオブジェクト
+
 var map;
 function initMap() {
   var target = document.getElementById('gmap');
@@ -42,17 +42,14 @@ function initMap() {
 }
   
  function getClickLatLng(lat_lng, map) {
-	// 前のマーカーを消す
-    	if(markers != null) {
-    		markers.setMap(null);
-    	}
+	
 
 	// 座標を表示
 	document.getElementById('lat').textContent = lat_lng.lat();
 	document.getElementById('lng').textContent = lat_lng.lng();
 
 	// マーカーを設置
-	markers = new google.maps.Marker({
+	var markers = new google.maps.Marker({
 		position: lat_lng,
 		map: map
 	});
