@@ -34,9 +34,7 @@ function initMap() {
       animation: google.maps.Animation.DROP
     });
     
-  google.maps.event.addListener(marker, 'click', function() {
-      infoWindow.open(map, marker); //marker の位置に情報ウィンドウを表示
-    });
+  
 }
 </script> 
 <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyCM6ph4cWgk7fkg8YkfKViFwuSnX5uc8sw&callback=initMap" async defer></script><!-- API_KEYの部分は取得した APIキーで置き換えます -->  
