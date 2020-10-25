@@ -26,7 +26,15 @@ function initMap() {
     zoom: 14,
     mapTypeId: "hybrid"
   });
-  google.maps.event.addListener(marker, 'click', function(e) {
+  
+  google.maps.event.addListener(map, 'click', function(e) {
+    var marker = new google.maps.Marker({
+      position: e.latLng,  //イベントの発生した緯度・経度（位置）
+      map: this,  //this は map を意味します
+      animation: google.maps.Animation.DROP
+    });
+    
+  google.maps.event.addListener(marker, 'click', function() {
       infoWindow.open(map, marker); //marker の位置に情報ウィンドウを表示
     });
 }
