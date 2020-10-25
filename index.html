@@ -27,11 +27,11 @@ function initMap() {
     mapTypeId: "hybrid"
   });
   
-  google.maps.event.addListener(map, 'click', function(e) {
-    var marker = new google.maps.Marker({
+  map.addListener(map, 'click', function(e) {
+    var marker = new map.Marker({
       position: e.latLng,  //イベントの発生した緯度・経度（位置）
       map: this,  //this は map を意味します
-      animation: google.maps.Animation.DROP
+      animation: map.Animation.DROP
     });
     
   
