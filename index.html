@@ -28,15 +28,18 @@ function initMap() {
     mapTypeId: "hybrid"
   });
   
-  // クリックイベントを追加
+  	 map.addListener('click', function(e){
+  		this.setCenter(e.latLng);
+  		this.panTo(e.latLng); アニメーションで中心位置を移動
+	});
+	
+	
+	// クリックイベントを追加
 	map.addListener('click', function(e) {
 		getClickLatLng(e.latLng, map);
 	});
   
-  map.addListener('click', function(e){
-  this.setCenter(e.latLng);
-  this.panTo(e.latLng); アニメーションで中心位置を移動
-});
+ 
   
  function getClickLatLng(lat_lng, map) {
 	// 前のマーカーを消す
