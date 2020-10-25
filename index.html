@@ -31,6 +31,11 @@ function initMap() {
   this.setCenter(e.latLng);
   this.panTo(e.latLng); アニメーションで中心位置を移動
 });
+  
+  var marker = new google.maps.Marker({
+  position: map.getCenter(),
+  map: map
+});
     
   
 }
