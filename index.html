@@ -36,7 +36,7 @@ function initMap() {
       	 var marker = new google.maps.Marker({
          position: e.latLng, //new google.maps.LatLng( 34.7351, 135.5005 ) 
          map: map,
-         title: "SYNCER",//e.latLng.toString(),
+         title: e.latLng.toString(),//"SYNCER",
          animation: google.maps.Animation.DROP
       });
       marker.addListener('click', function(){　//マーカーを消去
