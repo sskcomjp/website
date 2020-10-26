@@ -32,11 +32,11 @@ function initMap() {
   		//this.setCenter(e.latLng);
   		//this.panTo(e.latLng); アニメーションで中心位置を移動
 	//});
-	map.addListener('click', function(e){
+	map.addListener('click', function(){
       	 var marker = new google.maps.Marker({
-         position: e.latLng,
+         position: new google.maps.LatLng( 34.7351, 135.5005 ) ,//e.latLng,
          map: map,
-         title: e.latLng.toString(),
+         title: "SYNCER",//e.latLng.toString(),
          animation: google.maps.Animation.DROP
       });
       marker.addListener('click', function(){
