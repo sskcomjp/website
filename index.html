@@ -34,7 +34,7 @@ function initMap() {
 	});
 	map.addListener('click', function(){ //マーカーを表示
       	 var marker = new google.maps.Marker({
-         position: new google.maps.LatLng( 34.7351, 135.5005 ) ,//e.latLng,
+         position: e.latLng,new google.maps.LatLng( 34.7351, 135.5005 ) ,//e.latLng,
          map: map,
          title: "SYNCER",//e.latLng.toString(),
          animation: google.maps.Animation.DROP
