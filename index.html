@@ -28,7 +28,7 @@ function initMap() {
     mapTypeId: "roadmap"
   });
   
-  	 map.addListener('mousemove', function(e){
+  	 map.addListener('drag', function(e){
   		this.setCenter(e.latLng);
   		this.panTo(e.latLng); アニメーションで中心位置を移動
 	});
