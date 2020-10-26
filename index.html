@@ -32,7 +32,7 @@ function initMap() {
   		this.setCenter(e.latLng);
   		this.panTo(e.latLng); アニメーションで中心位置を移動
 	});
-	map.addListener('click', function(){ //マーカーを表示
+	map.addListener('click', function(e){ //マーカーを表示
       	 var marker = new google.maps.Marker({
          position: e.latLng, //new google.maps.LatLng( 34.7351, 135.5005 ) 
          map: map,
