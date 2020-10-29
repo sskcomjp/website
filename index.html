@@ -16,10 +16,12 @@
 <div id="gmap"></div>
 
 <script>
+let data_lat=35;
+let data_lng=135;
 var map;
 function initMap() {
   var target = document.getElementById('gmap');
-  var empire = {lat: 40.748441, lng: -73.985664};
+  var empire = {lat: data_lat, lng: data_lng};
   map = new google.maps.Map(target, {
     center: empire,
     zoom: 14
