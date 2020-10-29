@@ -21,7 +21,8 @@
 <div id="gmap"></div>
  
 <script>
-
+let data_lat=34.7351;
+let data_lng=135.5005;
 var map;
 function initMap() {
   var target = document.getElementById('gmap');
@@ -39,9 +40,9 @@ function initMap() {
 	});
 	map.addListener('click', function(e){ //マーカーを表示
       	 var marker = new google.maps.Marker({
-         position: e.latLng, //new google.maps.LatLng( 34.7351, 135.5005 ) 
+         position: new google.maps.LatLng( data_lat, data_lng), //e.latLng,
          map: map,
-         title: e.latLng.toString(),//"SYNCER",
+         title: "SYNCER", //e.latLng.toString(),
          animation: google.maps.Animation.DROP
       });
       marker.addListener('click', function(){　//マーカーを消去
