@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  <title>たいとる</title>
+  
+<style>
+#gmap {
+  height: 400px;
+  width: 600px;
+}
+</style>
+</head>
+<body>
+
+
+
+ 
+<div id="gmap"></div>
+ 
+<script>
+// 変数 map_canvas
+var map_canvas;
+
+// 配列の生成
+var data = new Array();
+data.push({lat:'35.319933', lng:'139.487519', name:'片瀬小学校'});
+data.push({lat:'35.322291', lng:'139.493211', name:'片瀬中学校'});
+data.push({lat:'35.299129', lng:'139.482337', name:'県立かながわ女性センター'});
+
+// マップの中心 変数 map_center
+var map_center = new google.maps.LatLng(data[0].lat, data[0].lng);
+
+// 変数 map_options
+var map_options = {
+　mapTypeId: google.maps.MapTypeId.ROADMAP,
+　center: map_center,
+　zoom: 14,
+};
+
+//変数 map_canvas
+map_canvas = new google.maps.Map(document.getElementById("map_canvas"), map_options);
+
+// マーカーの作成（0からデータの数分まで）
+for (i = 0; i < data.length; i++) {
+　create_marker(data[i].lat, data[i].lng);
+}
+
+// 関数 create_marker
+function create_marker(lat, lng){
+　//変数 marker_options
+　var marker_options = {
+  　map: map_canvas,
+    position: new google.maps.LatLng(lat, lng),
+    zIndex: 0,
+  };
+  // 変数 marker
+  var marker = new google.maps.Marker(marker_options);
+}
+	
+
+    
+  
+
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyCM6ph4cWgk7fkg8YkfKViFwuSnX5uc8sw&callback=initMap" async defer></script><!-- API_KEYの部分は取得した APIキーで置き換えます -->  
+</body>
+</html>
