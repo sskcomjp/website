@@ -9,20 +9,24 @@
 <body>
 
 <script>
-function init() {
-  var latlng = new google.maps.LatLng(37.4220, -122.08491731);
-  var myOptions = {
-    zoom: 17,
-    center: latlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-  var marker = new google.maps.Marker({
-  position: latlng,
-  map: map,
-  title: 'アメリカグーグルです'
+var map;
+function initMap() {
+  var target = document.getElementById('gmap');
+  var empire = {lat: 40.748441, lng: -73.985664};
+  map = new google.maps.Map(target, {
+    center: empire,
+    zoom: 14
   });
-}
+ 
+  var marker = new google.maps.Marker({
+    position: empire,
+    map: map,
+    title: "Empire !",
+    animation: google.maps.Animation.DROP,
+    icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
+  });
+}  
+  
 </script>
 
  
